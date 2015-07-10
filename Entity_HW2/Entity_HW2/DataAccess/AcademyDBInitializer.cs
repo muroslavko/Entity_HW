@@ -47,7 +47,6 @@ namespace Entity_HW2.DataAccess
             var user21 = new User() { Name = "Lyubochka Ivanov", Sity = "Lviv", CategoryId = categ.Where(x => x.Name == "DB").Select(x => x.Id).FirstOrDefault() };
             var user22 = new User() { Name = "Mykhaila Ivanov", Sity = "Kyiv", CategoryId = categ.Where(x => x.Name == "JS").Select(x => x.Id).FirstOrDefault() };
             var user23 = new User() { Name = "Marina Ivanov", Sity = "Kyiv", CategoryId = categ.Where(x => x.Name == ".NET").Select(x => x.Id).FirstOrDefault() };
-            //context.Users.Add(user1);
             context.Users.AddRange(new List<User>()
             {
                 user7, user8, user9, user10, user11, user12,
@@ -60,58 +59,39 @@ namespace Entity_HW2.DataAccess
                 MaxTime = 60,
                 PassMark = 5,
                 Name = "SQL",
-                //Categories = new List<Category>()
-                //{
-                //categ.FirstOrDefault(x => x.Name == ".NET"),
                 Category = categ.FirstOrDefault(x => x.Name == "PHP")
-                //}
             };
             var test2 = new Test()
             {
                 MaxTime = 60,
                 PassMark = 5,
                 Name = "JS Basic",
-                //Categories = new List<Category>()
-                //{
                 Category = categ.FirstOrDefault(x => x.Name == "JS"),
-                //    categ.FirstOrDefault(x => x.Name == "OOP")
-                //}
             };
             var test3 = new Test()
             {
                 MaxTime = 60,
                 PassMark = 5,
                 Name = "Net Basic",
-                //Categories = new List<Category>()
-                //{
-                //    categ.FirstOrDefault(x => x.Name == "English"),
                 Category = categ.FirstOrDefault(x => x.Name == ".NET")
-                //}
+
             };
             var test4 = new Test()
             {
                 MaxTime = 60,
                 PassMark = 5,
                 Name = "PHP Basic",
-                //Categories = new List<Category>()
-                //{
                 Category = categ.FirstOrDefault(x => x.Name == "PHP"),
-                //    categ.FirstOrDefault(x => x.Name == "OOP")
-                //}
+
             };
             var test5 = new Test()
             {
                 MaxTime = 60,
                 PassMark = 5,
                 Name = "OOP Basic",
-                //Categories = new List<Category>()
-                //{
                 Category = categ.FirstOrDefault(x => x.Name == ".NET"),
-                //categ.FirstOrDefault(x => x.Name == "JS"),
-                //categ.FirstOrDefault(x => x.Name == "PHP")
-                //}
+
             };
-            ///////context.Tests.AddOrUpdate(x => x.Name, test1, test2, test3, test4, test5);
 
             var quest1 = new Question()
             {
@@ -172,7 +152,6 @@ namespace Entity_HW2.DataAccess
                 new Lecture() {CategoryId = categ.Where(x => x.Name == "PHP").Select(x => x.Id).FirstOrDefault(), Description = "some text", Name = "Entity"},
                 }
             };
-            ////////context.Teachers.Add(teacher1);
             context.Teachers.AddRange(new List<Teacher>() { teacher1, teacher2, teacher3 });
             base.Seed(context);
         }

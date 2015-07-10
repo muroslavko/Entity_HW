@@ -122,16 +122,10 @@ namespace Entity_HW2
 
 
                 //Рейтинг вопросов по набранным баллам
-                var list = from item in db.TestWorks
-                    group item.Test by item.Mark
-                    into grp
-                    select new {Mark = grp.Key, Text = grp.Select(x => x.Name).FirstOrDefault()};
+                (from item in db.TestWorks
+                    orderby item.Mark descending
+                 select new {Mark = item.Mark, Name = item.Test.Name}).ToList().ForEach(x => Console.WriteLine("{0} - {1}",x.Mark,x.Name));
 
-                foreach (var item in list)
-                {
-                    Console.WriteLine(item.Text);
-                    
-                }
             }
             Console.ReadLine();
         }
