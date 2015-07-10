@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity_HW2.DataAccess;
 
 namespace Entity_HW2.Models
 {
-    class Lecture
+    class Lecture : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

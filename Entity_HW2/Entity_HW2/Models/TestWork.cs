@@ -5,10 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity_HW2.DataAccess;
 
 namespace Entity_HW2.Models
 {
-    class TestWork
+    class TestWork : IEntity
     {
         [Key, ForeignKey("Test")]
         public int Id { get; set; }

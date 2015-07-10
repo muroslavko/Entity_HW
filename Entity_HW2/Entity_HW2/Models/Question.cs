@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity_HW2.DataAccess;
 
 namespace Entity_HW2.Models
 {
-    class Question
+    class Question : IEntity
     {
         public int Id { get; set; }
         public int CategoryId { get; set; }
