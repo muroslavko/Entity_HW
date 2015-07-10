@@ -134,7 +134,6 @@ namespace Entity_HW2.DataAccess
 
             context.Questions.AddRange(new List<Question>() { quest1, quest2, quest3 });
 
-            //// TODO 1 : it create new user, but nead tu use old
             context.TestWorks.AddRange(
                 new List<TestWork>()
                 {
