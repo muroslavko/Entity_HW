@@ -22,5 +22,12 @@ namespace Entity_HW2
         public DbSet<Test> Tests { get; set; }
         public DbSet<TestWork> TestWorks { get; set; }
         public DbSet<User> Users { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().ToTable("Students");
+            modelBuilder.Entity<Question>()
+                .Property(p => p.Text)
+                .IsRequired();
+        }
     }
 }
