@@ -52,6 +52,11 @@
   <ItemGroup>
     <Compile Include="DataAccess\AcademyDbContext.cs" />
     <Compile Include="DataAccess\AcademyDBInitializer.cs" />
+    <Compile Include="Migrations\201507110521243_InitialCreate.cs" />
+    <Compile Include="Migrations\201507110521243_InitialCreate.Designer.cs">
+      <DependentUpon>201507110521243_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Lecture.cs" />
     <Compile Include="Models\Question.cs" />
@@ -66,7 +71,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507110521243_InitialCreate.resx">
+      <DependentUpon>201507110521243_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
