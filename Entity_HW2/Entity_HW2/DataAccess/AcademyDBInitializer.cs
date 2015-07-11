@@ -8,7 +8,7 @@ using Entity_HW2.Models;
 
 namespace Entity_HW2.DataAccess
 {
-    class AcademyDBInitializer : CreateDatabaseIfNotExists<AcademyDbContext>
+    class AcademyDBInitializer : DropCreateDatabaseAlways<AcademyDbContext>
     {
         protected override void Seed(AcademyDbContext context)
         {

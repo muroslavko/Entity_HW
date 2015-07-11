@@ -100,7 +100,7 @@ namespace Entity_HW2
 
                 //Рейтинг популярности вопросов в тестах (выводить количество использования данного вопроса в тестах)
                 (from item in db.Repository<Question>().Query()
-                 orderby item.Tests.Count()
+                 orderby item.Tests.Count() descending 
                  select new { Count = item.Tests.Count(), Text = item.Text })
                     .ToList().ForEach(x => Console.WriteLine("{0}  {1}", x.Count, x.Text));
                 Console.WriteLine(  );
